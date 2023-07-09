@@ -1,0 +1,114 @@
+<!Doctype html>
+<html>
+<head>
+    <style>
+        h1 {text-align: center;}
+        p {text-align: center;}
+        div {text-align: center;}
+        h2 {color:red;}
+    </style>
+     <title>Mortgage Backed Securities</title>
+</head>
+<body>
+    <div class = "login">
+    <h1><CENTER>Mortgage Backed Securities</CENTER></h1>
+    <form action= "{{ url_for("predict")}}" method="post">
+
+        <label for="CreditScore">Credit Score:</label>
+        <input type = "Text" name = "CreditScore" placeholder = "Enter  CreditScore"><br><br>
+        
+        <label for="First Time Home Buyer">First Time Home buyer:</label>
+        <select id = "First Time Home Buyer" name = "FTHB" placeholder = "Enter  FirstTimeHomebuyer"><br><br>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+        
+        <label for="MSA">MSA:</label>
+        <select id = "MSA" name = "MSA" placeholder = "Enter  MSA"><br><br>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+        <br><br>
+
+        <label for="MIP">MIP:</label>
+        <input type = "Text" name = "MIP" placeholder = "Enter  MIP"><br><br>
+
+        <label for="Units">Units:</label>
+        <input type = "Text" name = "Units" placeholder = "Enter  Units"><br><br>
+
+        <label for="Occupancy">Occupacy:</label>
+        <select id = "Occupancy" name = "Occupancy" placeholder = "Enter  Occupancy"><br><br>
+            <option value="0">Investment property</option>
+            <option value="1">Owner owned</option>
+            <option value="2">Second home</option>
+        </select>
+        <br><br>
+
+        <label for="DTI">DTI:</label>
+        <input type = "Text" name = "DTI" placeholder = "Enter  DTI"><br><br>
+        
+        <label for="OrigUPB">Original UPB:</label>
+        <input type = "Text" name = "OrigUPB" placeholder = "Enter  OrigUPB"><br><br>
+        
+        <label for="LTV">LTV:</label>
+        <input type = "Text" name = "LTV" placeholder = "Enter  LTV"><br><br>
+        
+        <label for="OrigInterestRate">Original Interest Rate:</label>
+        <input type = "Text" name = "OrigInterestRate" placeholder = "Enter  OrigInterestRate"><br><br>
+        
+        <label for="Channel">Channel:</label>
+        <select id = "Channel" name = "Channel" placeholder = "Enter  Channel"><br><br>
+            <option value="0">Broker</option>
+            <option value="1">Correpsondence</option>
+            <option value="2">Retailer</option>
+            <option value="3">Third Party</option>
+        </select>
+               
+             
+        <label for="PropertyType">Property Type:</label>
+        <select id = "PropertyType" name = "PropertyType" placeholder = "Enter  PropertyType"><br><br>
+            <option value="0">CO</option>            
+            <option value="1">CP</option>
+            <option value="2">LH</option>
+            <option value="3">MH</option>
+            <option value="4">PU</option>
+            <option value="5">SF</option>
+        </select>
+        <br><br>
+        
+        <label for="LoanPurpose">Loan Purpose:</label>
+        <select type = "LoanPurpose" name = "LoanPurpose" placeholder = "Enter  LoanPurpose"><br><br>
+            <option value="0">Cashout refinance mortgage</option>            
+            <option value="1">No cashout refinance mortgage</option>
+            <option value="2">Purchase mortgage</option>
+        </select>
+        <br><br>
+        
+        <label for="OrigLoanTerm">Original Loan Term:</label>
+        <input type = "Text" name = "OrigLoanTerm" placeholder = "Enter  OrigLoanTerm"><br><br>
+                
+        <label for="NumBorrowers">Num Borrowers:</label>
+        <select id = "NumBorrowers" name = "NumBorrowers" placeholder = "Enter  NumBorrowers"><br><br>
+            <option value="0">1</option>            
+            <option value="1">2</option>
+        </select>
+                
+        <label for="EverDelinquent">Ever Delinquent:</label>
+        <select id = "EverDelinquent" name = "EverDelinquent" placeholder = "Enter  EverDelinquent"><br><br>
+            <option value="0">0</option>            
+            <option value="1">1</option>
+        </select>
+        <br><br>
+        
+        <label for="MonthsInRepayment">Months In Repayment:</label>
+        <input type = "Text" name = "MonthsInRepayment" placeholder = "Enter  MonthsInRepayment"><br><br>
+
+
+        <button type="submit">Submit</button>
+
+        <h2 id="result">
+	    {{ prediction_text }} </h2>   
+            
+    </div>
+</body>
+</html>
